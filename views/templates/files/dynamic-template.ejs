@@ -1,0 +1,55 @@
+<mjml>
+    <mj-body background-color="#ffffff" font-size="13px">
+        <%- include("partials/logo.ejs")%>
+
+            <mj-section background-color="#009FE3" vertical-align="top" padding-bottom="0px" padding-top="0">
+
+                <% if(header) {%>
+                    <%- include("partials/header.ejs")%>
+                        <%}%>
+
+            </mj-section>
+            <mj-section background-color="#eee" padding-bottom="20px" padding-top="0px" color="#000">
+                <mj-column vertical-align="middle" width="100%">
+
+                    <mj-text align="left" color="#000" font-family="open Sans Helvetica, Arial, sans-serif" line-height="1.3"
+                        padding-left="19px" padding-right="25px" font-size="17px">
+
+
+                        <%if(userName !="" ){%>
+                            <% if(!header){%>
+                                <br>
+                                <%}%>
+                                    <a style="color:#009FE3 !important; font-size:19px; text-decoration:none;"> Dear <%-userName %>,</a>
+                                    <br /><br />
+                                    <%}%>
+
+
+                                        <%- text %>
+                    </mj-text>
+
+
+                    <% if(additionalText) {%>
+                        <%- include("partials/additionalText")%>
+                            <%}%>
+
+
+                                <%if(buttonLink){%>
+                                    <%- include("partials/button.ejs") %>
+                                        <%}%>
+
+                                            <%if(footer){%>
+                                                <mj-text align="left" color="#000" font-size="15px"
+                                                    font-family="open Sans Helvetica, Arial, sans-serif"
+                                                    padding-left="19px" padding-right="25px">
+                                                    <%if(footerText){%>
+                                                        <%-footerText%>
+                                                            <%}else{%>
+                                                                Thank you, <br /> <%-appName%> Team.
+                                                                    <%}%>
+                                                </mj-text>
+                                                <%}%>
+                </mj-column>>
+            </mj-section>
+    </mj-body>
+</mjml>

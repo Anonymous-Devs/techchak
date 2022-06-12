@@ -1,0 +1,21 @@
+Team - table
+createdBy - ObjectId
+name - text
+moto - text
+projects - [ {id - ObjectId, project - ObjectId, members - [ ObjectId ], status - enum ("To do", "in progress", "completed") } ]
+
+members - [ { 
+  status - String,
+  enum - ["pending", "accepted", "rejected"]
+  user - ObjectId
+  createdAt - date
+  updatedAt - date
+}]
+
+myProjectProfile - table
+team - [ ObjectId ]
+project - [ {type - (team, personal),  project - ObjectId} ] // e.g  {type - team, project - Team Project Id}, {type - personal, project - project ObjectId, status - enum ("To do", "in progress", "completed") }
+createdAt - date
+updatedAt - date
+
+// user can choose to join a team project or the owner of the project can choose to add them to it
